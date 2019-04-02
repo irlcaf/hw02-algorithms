@@ -6,6 +6,10 @@ def findPeak(array,low,high,length):
 
     if((mid==0 or array[mid-1] <= array[mid]) and (mid == length-1 or array[mid+1] <= array[mid])):
         return mid
+    elif array[low] >= array[low+1]:
+        return low
+    elif array[high] >= array[high-1]:
+        return high
     elif (mid > 0 and array[mid-1] > array[mid]):
         return findPeak(array,low,(mid-1),length)
     else:
