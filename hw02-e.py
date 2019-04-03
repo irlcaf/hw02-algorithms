@@ -3,16 +3,16 @@ def findPeak(array):
     low=0
     high= len(array)-1
     length = len(array)-1
-    if np.count_nonzero(array == array[0]) == len(array):
+    if array[low] > array[low+1]:
+        print("Peak is in the lower corner: %d"%array[low])
+    elif array[high] > array[high-1]:
+        print("Peak is in the upper corner: %d"array[high])
+    elif np.count_nonzero(array == array[0]) == len(array):
         print("All the elements are the same, peak is:%d" %array[0])
     elif(all(array[i] <= array[i+1] for i in range(len(array)-1))):
         print("Array is sorted, peak is: %d"%array[high])
     elif(all(array[i] <= array[i-1] for i in range(len(array)-1,0,-1))):
         print("Array is sorted, peak is: %d" %darray[low])  
-    elif array[low] > array[low+1]:
-        print("Lower corner is a peak: %d"%array[low])
-    elif array[high] > array[high-1]:
-        print("Upper corner is a peak: %d"%array[high])
     else:
         while True:
             mid = (high+low)//2
