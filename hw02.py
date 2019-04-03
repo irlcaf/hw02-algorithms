@@ -17,7 +17,7 @@ def findPeak(array,low,high,length):
             else:
                 return findPeak(np.split(array,mid+1,high),(mid+1),high,length)
 
-filename_1 = open('./array.txt','r')
+filename_1 = open(raw_input("Insert the text file:"),'r')
 lines = filename_1.readlines()
 for line in lines:
     array = np.fromstring(line,dtype=int,sep=',')
