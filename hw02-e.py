@@ -6,7 +6,7 @@ def findPeak(array):
     if array[low] > array[low+1]:
         print("Peak is in the lower corner: %d"%array[low])
     elif array[high] > array[high-1]:
-        print("Peak is in the upper corner: %d"array[high])
+        print("Peak is in the upper corner: %d"%array[high])
     elif np.count_nonzero(array == array[0]) == len(array):
         print("All the elements are the same, peak is:%d" %array[0])
     elif(all(array[i] <= array[i+1] for i in range(len(array)-1))):
