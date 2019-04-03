@@ -1,4 +1,5 @@
 import numpy as np
+import time
 def findPeak(array,low,high,length):
     if length == 0:
         return False
@@ -17,6 +18,7 @@ def findPeak(array,low,high,length):
             else:
                 return findPeak(np.split(array,mid+1,high),(mid+1),high,length)
 
+start = time.time()
 filename_1 = open(raw_input("Insert the text file:"),'r')
 lines = filename_1.readlines()
 for line in lines:
@@ -24,4 +26,5 @@ for line in lines:
 filename_1.close()
 length = len(array)
 print("The peak point is: %d"%array[findPeak(array,0,length-1,length)])
-
+end = time.time()
+print(end-start)
